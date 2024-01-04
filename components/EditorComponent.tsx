@@ -1,41 +1,19 @@
-import React, {
-  Dispatch,
-  SetStateAction,
-  useCallback,
-  useEffect,
-  useRef,
-} from "react";
+import React, { useEffect } from "react";
 
-import { createReactEditorJS } from "react-editor-js";
-import { EDITOR_JS_TOOLS } from "@/tools/tools";
-
-
-type Props = {
-  data: any;
-  setData: Dispatch<SetStateAction<any>>;
-};
-
+import EditorJS from "@editorjs/editorjs";
 
 const EditorComponent = () => {
-    const editorCore = useRef(null);
-  const ReactEditorJS = createReactEditorJS();
- 
-  const handleInitialize = useCallback((instance: any) => {
-    editorCore.current = instance
-  }, [])
+  const initEditor = () => {
+    const editor = new EditorJS({
+      holder: "editorjs",
+    });
+  };
 
+  useEffect(() => {
+    initEditor();
+  }, []);
 
-
-  return (
-    <div className="editor-container">
-      <ReactEditorJS
-        onInitialize={handleInitialize}
-        tools={EDITOR_JS_TOOLS}
-        // onChange={handleSave}
-        // defaultValue={data}
-      />
-    </div>
-  );
+  return <div id="editorjs"></div>;
 };
 
 export default EditorComponent;

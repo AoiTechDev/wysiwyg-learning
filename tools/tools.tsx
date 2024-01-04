@@ -8,7 +8,7 @@
 // import LinkTool from "@editorjs/link";
 // import Image from "@editorjs/image";
 // import Raw from "@editorjs/raw";
-// import Header from "@editorjs/header";
+import Header from "@editorjs/header";
 // import Quote from "@editorjs/quote";
 // import Marker from "@editorjs/marker";
 // import CheckList from "@editorjs/checklist";
@@ -27,7 +27,7 @@ export const EDITOR_JS_TOOLS = {
 //   linkTool: LinkTool,
 //   image: Image,
 //   raw: Raw,
-  // header: Header,
+  header: Header
 //   quote: Quote,
 //   marker: Marker,
 //   checklist: CheckList,
